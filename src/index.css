@@ -1,0 +1,175 @@
+@font-face {
+  font-family: Nunito;
+  font-weight: bold;
+  src: url("./assets/fonts/nunito/Nunito-Bold.ttf");
+}
+@font-face {
+  font-family: Nunito;
+  font-weight: 400;
+  src: url("./assets/fonts/nunito/Nunito-Regular.ttf");
+}
+
+@font-face {
+  font-family: Nunito;
+  font-weight: 200;
+  src: url("./assets/fonts/nunito/Nunito-Light.ttf");
+}
+
+:root{
+  --background: #303037;
+  --background-contrast: #151519;
+  --font: white;
+}
+
+body {
+  font-family: Nunito,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: auto;
+  background: transparent;
+}
+
+.app{
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  background: var(--background);
+}
+
+
+*:not(input) {
+  user-select: none;
+  -webkit-user-drag: none;
+  box-sizing: border-box;
+}
+
+.appbar{
+  display: flex;
+  z-index: 99999;
+  width: 100%;
+  height: 50px;
+  background: var(--background-contrast);
+  color: var(--font);
+  position: relative;
+}
+
+.appbar .appbar-dragger{
+  width: 99.5%;
+  height: 95%;
+  background: transparent;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 0;
+  -webkit-app-region: drag;
+  transform: translate(-50%, 0);
+}
+
+.appbar h2{
+  margin: auto;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.appbar .appbar-controllers{
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  font-size: 18px;
+  transform: translate(0%, -50%);
+  background: #15151570;
+  padding: 4px;
+  border-radius: 8px;
+  z-index: 10;
+  -webkit-app-region: no-drag
+}
+
+.appbar .appbar-controllers a {
+  margin: auto 0px;
+  padding: 4px;
+  font-size: 20px;
+  position: relative;
+  color: white;
+  cursor: pointer;
+  opacity: .8;
+}
+
+.appbar .appbar-controllers a:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.appbar .appbar-controllers a:first-child::after {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  bottom: 10px;
+  left: 6px;
+  border-radius: 2px;
+  background: white;
+}
+.appcontent{
+  display: flex;
+  padding: 1em;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+}
+
+label{
+  color: white;
+  margin: auto;
+}
+
+.tag{
+  background: var(--background-contrast);
+  padding: 8px 8px;
+  margin: 0 4px;
+  border-radius: 8px;
+  color: var(--font);
+  font-size: 14px;
+}
+
+.tags-input{
+  margin: 15px auto;
+}
+
+.main-input{
+  outline: none;
+  background: var(--background-contrast);
+  border: none;
+  padding:8px 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--font);
+}
+.main-input::placeholder{
+  color: var(--background);
+  font-family: Nunito;
+  font-size: .8em;
+}
+
+.button:hover{
+  transform: translateY(-4px);
+  background-color: #121214;
+  box-shadow: 0px 8px 8px 0px #1212147e;
+}
+
+.button:active{
+  transform: translateY(0px);
+  box-shadow: 0px 0px 8px 0px #1212147e;
+}
+
+.button{
+  margin: 15px auto;
+  position: relative;
+  background: var(--background-contrast);
+  color: var(--font);
+  padding: 14px 20px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
